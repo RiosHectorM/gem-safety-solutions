@@ -1,5 +1,6 @@
 export interface ContactRequest {
   name: string;
+  empresa: string;
   email: string;
   message: string;
 }

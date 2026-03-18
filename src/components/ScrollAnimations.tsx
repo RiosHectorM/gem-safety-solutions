@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from "three";
@@ -8,37 +8,42 @@ import * as THREE from "three";
 gsap.registerPlugin(ScrollTrigger);
 
 interface ScrollAnimationsProps {
-  modelRef: React.MutableRefObject<THREE.Mesh | null>;
+  modelRef: React.MutableRefObject<THREE.Group | null>;
 }
 
 export const ScrollAnimations: React.FC<ScrollAnimationsProps> = ({ modelRef }) => {
   useEffect(() => {
-    // Configurar Lag Smoothing para no competir con el ticker de Three.js
+    // Lag Smoothing paramétrico
     gsap.ticker.fps(60);
 
+    // Animaciones de Entradas (Fade-Ins de Textos)
+    const fadeElements = gsap.utils.toArray('.problem-card, .service-card, .differential-section h2, .differential-section h3');
+    fadeElements.forEach((el: any) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%", // Inicia cuando el 85% del viewport superior toque el elemento
+          toggleActions: "play none none reverse"
+        },
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out"
+      });
+    });
+
+    // Parallax Sutil del modelo al scrollear (no rotación brusca, sino leve desplazamiento vertical)
     if (modelRef.current) {
-      // Configurar animación inicial
-      const model = modelRef.current;
-      
-      const tl = gsap.timeline({
+      gsap.to(modelRef.current.position, {
         scrollTrigger: {
           trigger: "body",
           start: "top top",
           end: "bottom bottom",
-          scrub: 1.5, // Suavizar animación al hacer scroll
+          scrub: 1, // Suaviza la sincronización
         },
+        y: -1.5,
+        ease: "none"
       });
-
-      // Animación de rotación y traslación lateral
-      tl.to(model.rotation, {
-        y: Math.PI * 2,
-        x: Math.PI / 2,
-        ease: "none",
-      }, 0)
-      .to(model.position, {
-        x: 2, // Se desplaza hacia la derecha
-        ease: "power1.inOut",
-      }, 0);
     }
     
     return () => {
