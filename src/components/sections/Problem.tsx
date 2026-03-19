@@ -4,17 +4,17 @@ export const Problem = () => {
   const problems = [
     {
       icon: <AlertTriangle size={48} color="var(--cta-color)" />,
-      title: "¿Miedo a multas o clausuras?",
-      description: "El incumplimiento de normativas de seguridad e higiene no solo cuesta dinero, sino la continuidad operativa de tu empresa."
+      title: "¿Quiere evitar multas o clausuras?",
+      description: "El incumplimiento de normativas de seguridad e higiene no solo cuesta dinero, sino la continuidad operativa de su empresa."
     },
     {
       icon: <CloudOff size={48} color="var(--accent-color)" />,
-      title: "¿Preocupado por la seguridad de tus datos en la nube?",
+      title: "¿Esta preocupado por la seguridad de sus datos en la nube?",
       description: "Las vulnerabilidades en infraestructura Cloud exponen la información más sensible de tu negocio."
     },
     {
       icon: <FileCheck size={48} color="var(--text-main)" />,
-      title: "¿Buscando certificar ISO 27001 pero no sabés por dónde empezar?",
+      title: "¿Esta buscando certificar normas ISO pero no sabe por dónde empezar?",
       description: "El proceso de compliance puede ser abrumador sin la guía de auditores experimentados."
     }
   ];
