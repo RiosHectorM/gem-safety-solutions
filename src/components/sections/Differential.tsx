@@ -16,16 +16,23 @@ export const Differential = () => {
 
           <div style={{ flex: 1, minWidth: "250px", textAlign: "left", display: "flex", flexDirection: "column", gap: "1rem" }}>
             <div style={{ width: "40px", height: "4px", background: "var(--cta-color)", marginBottom: "1rem" }} />
-            <h4 style={{ fontSize: "1.25rem" }}>Liderazgo en Seguridad e Higiene</h4>
+            <h4 style={{ fontSize: "1.25rem" }}>Visión Integrada:</h4>
             <p style={{ color: "var(--text-muted)", lineHeight: "1.6" }}>
-              Tenemos experiencia brindando protección, capacitación y gestión integral para los entornos industriales más exigentes.
+              No solo auditamos procesos; blindamos la infraestructura que los soporta.
             </p>
           </div>
           <div style={{ flex: 1, minWidth: "250px", textAlign: "left", display: "flex", flexDirection: "column", gap: "1rem" }}>
             <div style={{ width: "40px", height: "4px", background: "var(--accent-color)", marginBottom: "1rem" }} />
-            <h4 style={{ fontSize: "1.25rem" }}>+20 Años de Experiencia Digital</h4>
+            <h4 style={{ fontSize: "1.25rem" }}>Seniority Real</h4>
             <p style={{ color: "var(--text-muted)", lineHeight: "1.6" }}>
-              Desarrollo de infraestructuras complejas, cumplimiento normativo global en la nube (ISO 27001) y arquitecturas resilientes sobre AWS.
+              Combinamos décadas de experiencia en Seguridad Industrial con arquitectura Cloud de vanguardia.
+            </p>
+          </div>
+          <div style={{ flex: 1, minWidth: "250px", textAlign: "left", display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <div style={{ width: "40px", height: "4px", background: "var(--accent-color)", marginBottom: "1rem" }} />
+            <h4 style={{ fontSize: "1.25rem" }}>Resultados Certificables:</h4>
+            <p style={{ color: "var(--text-muted)", lineHeight: "1.6" }}>
+              Preparamos a tu organización para cumplir con estándares internacionales (ISO) y normativas vigentes, garantizando la continuidad de tu negocio.
             </p>
           </div>
         </div>

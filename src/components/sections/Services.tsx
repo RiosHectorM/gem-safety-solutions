@@ -1,4 +1,5 @@
 import { ShieldCheck, CloudLightning } from "lucide-react";
+import { TextReveal } from "../ui/TextReveal";
 
 export const Services = () => {
   return (
@@ -14,22 +15,22 @@ export const Services = () => {
             background: "linear-gradient(145deg, var(--bg-lighter) 0%, var(--bg-color) 100%)",
             padding: "3rem",
             borderRadius: "1rem",
-            borderLeft: "4px solid var(--cta-color)"
+            borderLeft: "4px solid #F97316"
           }}>
-            <ShieldCheck size={56} color="var(--cta-color)" style={{ marginBottom: "1.5rem" }} />
+            <ShieldCheck size={56} color="#F97316" style={{ marginBottom: "1.5rem" }} />
             <h3 style={{ fontSize: "1.8rem", marginBottom: "1rem", textAlign: "center" }}>Seguridad e Higiene Industrial & Auditorías SGI <br /> (ISO 45001, 14001, 9001)</h3>
-            <p style={{ color: "var(--text-muted)", lineHeight: "1.6", marginBottom: "2rem" }}>
-              Protección física integral para entornos de alto riesgo.
-            </p>
+            <div style={{ color: "var(--text-muted)", lineHeight: "1.6", marginBottom: "2rem" }}>
+              <TextReveal text="Protección física integral para entornos de alto riesgo garantizando el Cumplimiento Normativo." highlightWords={["Cumplimiento Normativo"]} highlightColor="#F97316" />
+            </div>
             <ul style={{ listStyleType: "none", display: "flex", flexDirection: "column", gap: "1rem", color: "var(--text-main)" }}>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ color: "var(--cta-color)" }}>✔</span> Auditorías y Diagnósticos de Planta
+                <span style={{ color: "#F97316" }}>✔</span> Auditorías y Diagnósticos de Planta
               </li>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ color: "var(--cta-color)" }}>✔</span> Sistemas de Gestión Integrados (SGI)
+                <span style={{ color: "#F97316" }}>✔</span> Sistemas de Gestión Integrados (SGI)
               </li>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ color: "var(--cta-color)" }}>✔</span> Capacitaciones Especializadas
+                <span style={{ color: "#F97316" }}>✔</span> Capacitaciones Especializadas
               </li>
             </ul>
           </div>
@@ -43,9 +44,9 @@ export const Services = () => {
           }}>
             <CloudLightning size={56} color="var(--accent-color)" style={{ marginBottom: "1.5rem" }} />
             <h3 style={{ fontSize: "1.8rem", marginBottom: "1rem", textAlign: "center" }}>Arquitectura Cloud & Ciberseguridad <br /> (AWS & ISO 27001)</h3>
-            <p style={{ color: "var(--text-muted)", lineHeight: "1.6", marginBottom: "2rem" }}>
-              Ingeniería y cumplimiento normativo para la era digital.
-            </p>
+            <div style={{ color: "var(--text-muted)", lineHeight: "1.6", marginBottom: "2rem" }}>
+              <TextReveal text="Ingeniería y cumplimiento normativo para la era digital protegiendo infraestructura cloud." highlightWords={["cumplimiento normativo"]} highlightColor="#F97316" />
+            </div>
             <ul style={{ listStyleType: "none", display: "flex", flexDirection: "column", gap: "1rem", color: "var(--text-main)" }}>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                 <span style={{ color: "var(--accent-color)" }}>✔</span> Arquitectura Segura en AWS

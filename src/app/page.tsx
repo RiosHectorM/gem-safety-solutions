@@ -3,6 +3,8 @@
 import { CanvasScene } from "@/components/CanvasScene";
 import { Hero } from "@/components/sections/Hero";
 import { Problem } from "@/components/sections/Problem";
+import { About } from "@/components/sections/About";
+import { Process } from "@/components/sections/Process";
 import { Services } from "@/components/sections/Services";
 import { Differential } from "@/components/sections/Differential";
 import { TechStack } from "@/components/sections/TechStack";
@@ -18,6 +20,8 @@ export default function Home() {
       <div className="content-wrapper" style={{ position: "relative", zIndex: 1 }}>
         <Hero />
         <Problem />
+        <About />
+        <Process />
         <Services />
         <Differential />
         <TechStack />

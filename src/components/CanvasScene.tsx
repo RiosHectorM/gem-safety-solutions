@@ -1,8 +1,8 @@
 "use client";
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Environment, Preload, useProgress, Html } from "@react-three/drei";
-import { Suspense, useRef } from "react";
+import { Environment, Preload, useProgress, Html, PerformanceMonitor, Grid } from "@react-three/drei";
+import { Suspense, useRef, useState } from "react";
 import * as THREE from "three";
 import { ScrollAnimations } from "./ScrollAnimations";
 
@@ -18,7 +18,7 @@ function Loader() {
 }
 
 // Representa Fusión Industrial-Cloud
-function ComplexModel({ modelRef }: { modelRef: React.MutableRefObject<THREE.Group | null> }) {
+function ComplexModel({ modelRef, lowPerf }: { modelRef: React.MutableRefObject<THREE.Group | null>, lowPerf: boolean }) {
   const meshRef = useRef<THREE.Group>(null);
   const targetRotation = useRef({ x: 0, y: 0 });
 
@@ -43,10 +43,25 @@ function ComplexModel({ modelRef }: { modelRef: React.MutableRefObject<THREE.Gro
 
   return (
     <group ref={modelRef}>
+      {/* Trama Industrial / GridTécnico sutil en el fondo de la malla */}
+      <Grid 
+        position={[0, -2, -3]} 
+        args={[10.5, 10.5]} 
+        cellSize={0.5} 
+        cellThickness={1} 
+        cellColor="var(--cta-hover)" 
+        sectionSize={2.5} 
+        sectionThickness={1.5} 
+        sectionColor="var(--cta-color)" 
+        fadeDistance={25} 
+        fadeStrength={1} 
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
+
       <group ref={meshRef}>
         {/* Núcleo Industrial "Solid" */}
         <mesh>
-          <icosahedronGeometry args={[1.5, 0]} />
+          <icosahedronGeometry args={[1.5, lowPerf ? 0 : 1]} />
           <meshPhysicalMaterial
             color="var(--accent-color)"
             metalness={0.8}
@@ -59,7 +74,7 @@ function ComplexModel({ modelRef }: { modelRef: React.MutableRefObject<THREE.Gro
         
         {/* Capa Exterior "Cloud" Sutil */}
         <mesh scale={[1.8, 1.8, 1.8]}>
-          <octahedronGeometry args={[1, 2]} />
+          <octahedronGeometry args={[1, lowPerf ? 1 : 2]} />
           <meshPhysicalMaterial
             color="var(--cta-color)"
             metalness={0.5}
@@ -93,18 +108,31 @@ function CameraController() {
 
 export function CanvasScene() {
   const modelRef = useRef<THREE.Group>(null);
+  const [dpr, setDpr] = useState([1, 2]);
+  const [lowPerf, setLowPerf] = useState(false);
 
   return (
     <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100vh", zIndex: 0, background: "var(--bg-color)" }}>
-      <Canvas dpr={[1, 2]} gl={{ antialias: true, alpha: false }}>
+      <Canvas dpr={dpr as [number, number]} gl={{ antialias: !lowPerf, alpha: false }}>
+        <PerformanceMonitor 
+          onDecline={() => {
+            setDpr([1, 1]);
+            setLowPerf(true);
+          }} 
+          onIncline={() => {
+            setDpr([1, 2]);
+            setLowPerf(false);
+          }}
+        />
         <CameraController />
         <ambientLight intensity={0.7} />
-        <directionalLight position={[10, 10, 5]} intensity={2} color="var(--accent-color)" />
+        {/* Usamos baja resolución de sombras (o sin ellas) cuando el rendimiento baja */}
+        <directionalLight position={[10, 10, 5]} intensity={2} color="var(--accent-color)" castShadow={!lowPerf} />
         <directionalLight position={[-10, -10, -5]} intensity={1} color="var(--cta-color)" />
         <Environment preset="night" blur={0.8} />
         
         <Suspense fallback={<Loader />}>
-          <ComplexModel modelRef={modelRef} />
+          <ComplexModel modelRef={modelRef} lowPerf={lowPerf} />
           <Preload all />
         </Suspense>
       </Canvas>

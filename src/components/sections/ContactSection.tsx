@@ -50,11 +50,11 @@ export const ContactSection = () => {
           <div style={{ marginTop: "2rem", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "1rem", color: "var(--text-main)" }}>
               <Mail color="var(--cta-color)" />
-              <span>contacto@gemsafety.com</span>
+              <span>contacto@gemsafetysolutions.com</span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "1rem", color: "var(--text-main)" }}>
               <MapPin color="var(--cta-color)" />
-              <span>Buenos Aires, Argentina (Global Reach)</span>
+              <span>Córdoba, Argentina (Global Reach)</span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "1rem", color: "var(--text-main)" }}>
               <Linkedin color="var(--cta-color)" />
