@@ -19,13 +19,13 @@ export const TechStack = () => {
             <h3 style={{ fontSize: "1.8rem", marginBottom: "1rem", textAlign: "center" }}>Seguridad e Higiene Industrial & Auditorías SGI</h3>
             <ul style={{ listStyleType: "none", display: "flex", flexDirection: "column", gap: "1rem", color: "var(--text-main)" }}>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ color: "var(--cta-color)" }}>✔</span> ISO 45001 (Salud y Seguridad)
+                <span style={{ color: "var(--cta-color)" }}>✔</span> Auditorías de cumplimiento (Ley 19.587).
               </li>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ color: "var(--cta-color)" }}>✔</span> ISO 14001 (Ambiente)
+                <span style={{ color: "var(--cta-color)" }}>✔</span> Gestión de Riesgos y SGI (ISO 45001).
               </li>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ color: "var(--cta-color)" }}>✔</span> ISO 9001 (Calidad)
+                <span style={{ color: "var(--cta-color)" }}>✔</span> Capacitaciones en Planta y Prevención.
               </li>
             </ul>
           </div>
@@ -40,13 +40,13 @@ export const TechStack = () => {
             <h3 style={{ fontSize: "1.8rem", marginBottom: "1rem", textAlign: "center" }}>Arquitectura Cloud & Ciberseguridad </h3>
             <ul style={{ listStyleType: "none", display: "flex", flexDirection: "column", gap: "1rem", color: "var(--text-main)" }}>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ color: "var(--accent-color)" }}>✔</span> AWS Cloud Security
+                <span style={{ color: "var(--accent-color)" }}>✔</span> Arquitectura Cloud Segura en AWS.
               </li>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ color: "var(--accent-color)" }}>✔</span> ISO 27001
+                <span style={{ color: "var(--accent-color)" }}>✔</span> Implementación ISO 27001 (SGSI).
               </li>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ color: "var(--accent-color)" }}>✔</span> Compliance Automation
+                <span style={{ color: "var(--accent-color)" }}>✔</span> Continuidad de Negocio & Disaster Recovery.
               </li>
             </ul>
           </div>
