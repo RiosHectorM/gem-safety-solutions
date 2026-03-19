@@ -28,7 +28,8 @@ export const Hero = () => {
           fontSize: "1.25rem",
           color: "var(--text-muted)",
           marginBottom: "2.5rem",
-          lineHeight: "1.6"
+          lineHeight: "1.6",
+          textTransform: "uppercase"
         }}>
           Consultoría Integral en Higiene y Seguridad <br /> (ISO 45001 - 14001 - 9001) 
         </p>
@@ -36,7 +37,8 @@ export const Hero = () => {
           fontSize: "1.25rem",
           color: "var(--text-muted)",
           marginBottom: "2.5rem",
-          lineHeight: "1.6"
+          lineHeight: "1.6",
+          textTransform: "uppercase"
         }}>
           Infraestructura Cloud Segura <br /> (ISO 27001 & AWS). 
           
@@ -45,7 +47,8 @@ export const Hero = () => {
           fontSize: "1.25rem",
           color: "var(--text-muted)",
           marginBottom: "2.5rem",
-          lineHeight: "1.6"
+          lineHeight: "1.6",
+          textTransform: "uppercase"
         }}>
           <span style={{ color: "var(--accent-color)" }}>Donde la seguridad física se encuentra con el futuro digital.</span>
         </p>

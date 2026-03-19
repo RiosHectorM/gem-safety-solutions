@@ -22,7 +22,7 @@ export const Problem = () => {
   return (
     <section className="problem-section" style={{ padding: "8rem 2rem", backgroundColor: "var(--bg-lighter)", position: "relative", zIndex: 10 }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto", textAlign: "center" }}>
-        <h2 style={{ fontSize: "2.5rem", marginBottom: "4rem", color: "var(--accent-color)" }}>El Problema que Resolvemos</h2>
+        <h2 style={{ fontSize: "2.5rem", marginBottom: "4rem", color: "var(--accent-color)" , textTransform: "uppercase"}}>El Problema que Resolvemos</h2>
         
         <div style={{ 
           display: "grid", 
