@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { ContactRequest, ContactResponse } from "@/types/contact";
 import { Mail, MapPin, Linkedin } from "lucide-react";
+import { TextReveal } from "../ui/TextReveal";
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState<ContactRequest>({ name: "", empresa: "", email: "", message: "" });
@@ -42,29 +43,27 @@ export const ContactSection = () => {
         
         {/* Contact Info */}
         <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-          <h2 style={{ fontSize: "2.5rem", color: "var(--accent-color)", marginBottom: "1rem" }}>Iniciemos la Conversación</h2>
-          <p style={{ color: "var(--text-muted)", fontSize: "1.1rem", lineHeight: "1.6" }}>
-            Contanos sobre tu desafío. Ya sea una auditoría industrial o un despliegue seguro en la nube, tenemos el expertise para blindar tu negocio.
-          </p>
+          <h2 style={{ fontSize: "2.5rem", color: "var(--accent-color)", marginBottom: "1rem", textTransform: "uppercase" }}>Iniciemos la Conversación</h2>
+          <TextReveal text="Contanos sobre tu desafío. Ya sea una auditoría industrial o un despliegue seguro en la nube, tenemos el expertise para blindar tu negocio." highlightWords={["auditoría industrial", "despliegue seguro en la nube"]} highlightColor="var(--accent-color)" />
           
-          <div style={{ marginTop: "2rem", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+          <div className="service-card" style={{ marginTop: "2rem", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "1rem", color: "var(--text-main)" }}>
               <Mail color="var(--cta-color)" />
-              <span>contacto@gemsafetysolutions.com</span>
+              <span>eugenia.gutierrez.iso@gmail.com</span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "1rem", color: "var(--text-main)" }}>
               <MapPin color="var(--cta-color)" />
-              <span>Córdoba, Argentina (Global Reach)</span>
+              <span>Córdoba, Argentina</span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "1rem", color: "var(--text-main)" }}>
               <Linkedin color="var(--cta-color)" />
-              <a href="#" style={{ color: "var(--text-main)", textDecoration: "none" }}>GEM Safety Solutions</a>
+              <a href="https://www.linkedin.com/company/gemsafetysolutions" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-main)", textDecoration: "none" }}>GEM Safety Solutions</a>
             </div>
           </div>
         </div>
 
         {/* Contact Form */}
-        <div style={{ background: "var(--bg-color)", padding: "3rem", borderRadius: "1rem", border: "1px solid rgba(255,255,255,0.05)" }}>
+        <div className="service-card" style={{ background: "var(--bg-color)", padding: "3rem", borderRadius: "1rem", border: "1px solid rgba(255,255,255,0.05)" }}>
           <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
             <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
               <input 

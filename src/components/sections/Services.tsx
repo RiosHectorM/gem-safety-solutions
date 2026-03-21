@@ -1,36 +1,33 @@
-import { ShieldCheck, CloudLightning } from "lucide-react";
+import { ShieldCheck, CloudLightning, CloudBackup, FileCode } from "lucide-react";
 import { TextReveal } from "../ui/TextReveal";
 
 export const Services = () => {
   return (
     <section style={{ padding: "8rem 2rem", position: "relative", zIndex: 10 }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "1600px", margin: "0 auto" }}>
         <h2 style={{ fontSize: "2.5rem", marginBottom: "4rem", color: "var(--accent-color)", textAlign: "center", textTransform: "uppercase" }}>
           Nuestros Servicios de Vanguardia
         </h2>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem" }} className="services-grid">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "4rem" }} className="services-grid">
+
           {/* Service Block 1 */}
           <div className="service-card" style={{
             background: "linear-gradient(145deg, var(--bg-lighter) 0%, var(--bg-color) 100%)",
             padding: "3rem",
             borderRadius: "1rem",
-            borderLeft: "4px solid #F97316"
+            borderLeft: "4px solid #F97316",
+            borderRight: "4px solid #F97316"
+
           }}>
             <ShieldCheck size={56} color="#F97316" style={{ marginBottom: "1.5rem" }} />
-            <h3 style={{ fontSize: "1.8rem", marginBottom: "1rem", textAlign: "center" }}>Seguridad e Higiene Industrial & Auditorías SGI <br /> (ISO 45001, 14001, 9001)</h3>
+            <h3 style={{ fontSize: "1.8rem", marginBottom: "1rem", textAlign: "center", color: "#F97316" }}>Gestión de Riesgos e Higiene Industrial</h3>
             <div style={{ color: "var(--text-muted)", lineHeight: "1.6", marginBottom: "2rem" }}>
-              <TextReveal text="Protección física integral para entornos de alto riesgo garantizando el Cumplimiento Normativo." highlightWords={["Cumplimiento Normativo"]} highlightColor="#F97316" />
+              <TextReveal text="Cumplimiento Normativo y Sistemas de Gestión (ISO)." highlightWords={["Cumplimiento Normativo y Sistemas de Gestión (ISO)."]} highlightColor="#F97316" />
             </div>
             <ul style={{ listStyleType: "none", display: "flex", flexDirection: "column", gap: "1rem", color: "var(--text-main)" }}>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ color: "#F97316" }}>✔</span> Auditorías y Diagnósticos de Planta
-              </li>
-              <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ color: "#F97316" }}>✔</span> Sistemas de Gestión Integrados (SGI)
-              </li>
-              <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ color: "#F97316" }}>✔</span> Capacitaciones Especializadas
+                Desarrollamos e implementamos Sistemas de Gestión Integrados (SGI) bajo estándares ISO 9001, 14001 y 45001. Realizamos auditorías de cumplimiento legal (Ley 19.587), relevamientos de riesgos (SRT), planes de contingencia y capacitación técnica para garantizar entornos de trabajo seguros y eficientes.
               </li>
             </ul>
           </div>
@@ -40,28 +37,44 @@ export const Services = () => {
             background: "linear-gradient(145deg, var(--bg-lighter) 0%, var(--bg-color) 100%)",
             padding: "3rem",
             borderRadius: "1rem",
-            borderRight: "4px solid var(--accent-color)"
+            borderRight: "4px solid var(--accent-color)",
+            borderLeft: "4px solid var(--accent-color)"
           }}>
             <CloudLightning size={56} color="var(--accent-color)" style={{ marginBottom: "1.5rem" }} />
-            <h3 style={{ fontSize: "1.8rem", marginBottom: "1rem", textAlign: "center" }}>Arquitectura Cloud & Ciberseguridad <br /> (AWS & ISO 27001)</h3>
+            <h3 style={{ fontSize: "1.8rem", marginBottom: "1rem", textAlign: "center", color: "var(--accent-color)" }}>Infraestructura Cloud & ISO 27001</h3>
             <div style={{ color: "var(--text-muted)", lineHeight: "1.6", marginBottom: "2rem" }}>
-              <TextReveal text="Ingeniería y cumplimiento normativo para la era digital protegiendo infraestructura cloud." highlightWords={["cumplimiento normativo"]} highlightColor="#F97316" />
+              <TextReveal text="Blindaje de activos de información en la nube." highlightWords={["Blindaje de activos de información en la nube."]} highlightColor="var(--accent-color)" />
             </div>
             <ul style={{ listStyleType: "none", display: "flex", flexDirection: "column", gap: "1rem", color: "var(--text-main)" }}>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ color: "var(--accent-color)" }}>✔</span> Arquitectura Segura en AWS
+                Diseñamos arquitecturas resilientes y escalables en Amazon Web Services (AWS) bajo el marco de la norma ISO 27001. Implementamos estrategias de ciberseguridad defensiva, gestión de identidades (IAM) y continuidad de negocio para proteger el activo más valioso de tu empresa: la información.
               </li>
+            </ul>
+          </div>
+
+          {/* Service Block 3 */}
+          <div className="service-card" style={{
+            background: "linear-gradient(145deg, var(--bg-lighter) 0%, var(--bg-color) 100%)",
+            padding: "3rem",
+            borderRadius: "1rem",
+            borderRight: "4px solid #23f806ff",
+            borderLeft: "4px solid #23f806ff"
+          }}>
+            <FileCode  size={56} color="#23f806ff" style={{ marginBottom: "1.5rem" }} />
+            <h3 style={{ fontSize: "1.8rem", marginBottom: "1rem", textAlign: "center", color: "#23f806ff" }}>Inteligencia de Datos para Auditorías</h3>
+            <div style={{ color: "var(--text-muted)", lineHeight: "1.6", marginBottom: "2rem" }}>
+              <TextReveal text="Software a medida para la gestión de cumplimiento." highlightWords={["Software a medida para la gestión de cumplimiento."]} highlightColor="#3cf916ff" />
+            </div>
+            <ul style={{ listStyleType: "none", display: "flex", flexDirection: "column", gap: "1rem", color: "var(--text-main)" }}>
               <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ color: "var(--accent-color)" }}>✔</span> Auditoría e Implementación ISO 27001
-              </li>
-              <li style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ color: "var(--accent-color)" }}>✔</span> Compliance Automation
+                 Fusionamos la ingeniería de software con la normativa legal para crear herramientas de Automatización de Auditorías. Mediante algoritmos de IA, agilizamos la generación de informes técnicos, seguimiento de hallazgos y control de activos, permitiendo una toma de decisiones basada en datos reales y en tiempo real.
               </li>
             </ul>
           </div>
         </div>
         <h3 style={{ fontSize: "1.5rem", fontWeight: "300", marginTop: "3rem", color: "var(--text-main)", textAlign: "center", textTransform: "uppercase" }}>
-          Unificamos el cumplimiento <span style={{ color: "var(--cta-hover)", fontWeight: "600" }}>físico en planta</span> con la resiliencia de tus <span style={{ color: "var(--accent-color)", fontWeight: "600" }}>datos en la nube</span>.
+          <TextReveal text="Unificamos el cumplimiento con la resiliencia de tus datos en la nube." highlightWords={["Unificamos el cumplimiento", "resiliencia de tus datos en la nube."]} highlightColor="var(--accent-color)" />
+          
         </h3>
 
         {/* Responsive Grid css logic for inline style limits */}

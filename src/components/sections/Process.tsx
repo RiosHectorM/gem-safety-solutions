@@ -42,7 +42,7 @@ export const Process = () => {
     <section id="proceso" style={{ padding: "8rem 2rem", position: "relative", zIndex: 10 }}>
       <div ref={containerRef} style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <h2 style={{ fontSize: "2.5rem", marginBottom: "4rem", color: "var(--text-main)", textAlign: "center", textTransform: "uppercase" }}>
-          El <span style={{ color: "var(--accent-color)" }}>Proceso</span>
+           <span style={{ color: "var(--cta-color)" }}>El Proceso</span>
         </h2>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "2rem", position: "relative" }}>

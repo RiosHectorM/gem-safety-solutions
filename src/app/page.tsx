@@ -20,11 +20,11 @@ export default function Home() {
       <div className="content-wrapper" style={{ position: "relative", zIndex: 1 }}>
         <Hero />
         <Problem />
-        <About />
         <Process />
         <Services />
         <Differential />
         <TechStack />
+        <About />
         <ContactSection />
       </div>
 

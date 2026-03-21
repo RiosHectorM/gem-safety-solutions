@@ -13,7 +13,7 @@ export const Problem = () => {
       description: "Las vulnerabilidades en infraestructura Cloud exponen la información más sensible de tu negocio."
     },
     {
-      icon: <FileCheck size={48} color="var(--text-main)" />,
+      icon: <FileCheck size={48} color="#23f806ff" />,
       title: "¿Esta buscando certificar normas ISO pero no sabe por dónde empezar?",
       description: "El proceso de compliance puede ser abrumador sin la guía de auditores experimentados."
     }

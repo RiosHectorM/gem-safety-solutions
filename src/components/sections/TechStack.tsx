@@ -4,11 +4,13 @@ export const TechStack = () => {
   return (
     <section className="tech-section" style={{ padding: "4rem 2rem", position: "relative", zIndex: 10, borderTop: "1px solid rgba(255,255,255,0.05)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
 
-      <div style={{ maxWidth: "600px", margin: "0 auto", textAlign: "center" }}>
-        <p style={{ fontSize: "1rem", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "2rem" }}>
+      <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
+        
+        <h2 style={{ fontSize: "2.5rem", marginBottom: "2rem", color: "var(--cta-color)" }}>
           Tecnologías y Estándares que Dominamos
-        </p>
-        <div style={{ gap: "4rem" }} className="services-grid">
+        </h2>
+
+        <div style={{ gap: "2rem" }} className="services-grid">
           {/* Service Block 1 */}
           <div className="service-card" style={{
             background: "linear-gradient(145deg, var(--bg-lighter) 0%, var(--bg-color) 100%)",
