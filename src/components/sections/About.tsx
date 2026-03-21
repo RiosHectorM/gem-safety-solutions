@@ -20,7 +20,11 @@ export const About = () => {
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "2rem" }}>
           {/* Avatar 1 */}
-          <div className="service-card" style={{ background: "var(--bg-lighter)", padding: "2rem", borderRadius: "1rem", textAlign: "center" }}>
+          <div className="service-card" style={{
+            background: "var(--bg-lighter)", padding: "2rem", borderRadius: "1rem", textAlign: "center",
+            borderRight: "4px solid var(--cta-color)",
+            borderLeft: "4px solid var(--cta-color)"
+          }}>
             <UserCircle2 size={80} color="var(--cta-color)" style={{ margin: "0 auto 1rem auto" }} />
             <h3 style={{ fontSize: "1.5rem", marginBottom: "0.5rem", color: "var(--text-main)" }}>María Eugenia</h3>
             <p style={{ color: "var(--cta-color)", fontWeight: "bold", marginBottom: "1rem" }}>Experta en Normativa y Prevención</p>
@@ -28,12 +32,53 @@ export const About = () => {
           </div>
 
           {/* Avatar 2 */}
-          <div className="service-card" style={{ background: "var(--bg-lighter)", padding: "2rem", borderRadius: "1rem", textAlign: "center" }}>
+          <div className="service-card" style={{
+            background: "var(--bg-lighter)", padding: "2rem", borderRadius: "1rem", textAlign: "center",
+            borderRight: "4px solid var(--accent-color)",
+            borderLeft: "4px solid var(--accent-color)"
+          }}>
             <UserCircle2 size={80} color="var(--accent-color)" style={{ margin: "0 auto 1rem auto" }} />
             <h3 style={{ fontSize: "1.5rem", marginBottom: "0.5rem", color: "var(--text-main)" }}>Héctor Martin</h3>
             <p style={{ color: "var(--accent-color)", fontWeight: "bold", marginBottom: "1rem" }}>Arquitecto Cloud y Ciberseguridad</p>
             <TextReveal text="Certificado en AWS e implementador de ISO 27001. Lidera el diseño de infraestructuras digitales resilientes, protegiendo los datos corporativos frente a las amenazas de ciberseguridad modernas." highlightWords={["ISO 27001", "AWS"]} highlightColor="var(--accent-color)" />
           </div>
+        </div>
+
+        <div style={{ marginBottom: "4rem", paddingTop: "4rem", fontSize: "1.2rem", color: "var(--text-muted)", lineHeight: "1.8", textAlign: "center", maxWidth: "800px", margin: "0 auto 4rem auto", borderBottom: "4px solid var(--cta-color)", borderRadius: "1rem"}}>
+          <h3 className="service-card" style={{ fontSize: "1.5rem", marginBottom: "0.5rem", color: "var(--text-main)", textTransform: "uppercase" }}>Misión</h3>
+          <TextReveal
+            text="Empoderar a las organizaciones para que alcancen su máximo potencial operativo, garantizando la seguridad de sus personas y la integridad de sus activos digitales mediante la innovación y el cumplimiento normativo."
+            highlightWords={["Empoderar a las organizaciones"]}
+            highlightColor="var(--cta-color)"
+          />
+        </div>
+
+        <div style={{ marginBottom: "4rem", fontSize: "1.2rem", color: "var(--text-muted)", lineHeight: "1.8", textAlign: "center", maxWidth: "800px", margin: "0 auto 4rem auto", borderBottom: "4px solid var(--accent-color)", borderRadius: "1rem" }}>
+          <h3 className="service-card" style={{ fontSize: "1.5rem", marginBottom: "0.5rem", color: "var(--text-main)", textTransform: "uppercase" }}>Visión</h3>
+          <TextReveal
+            text="Ser la consultora líder en la integración de seguridad industrial y tecnología cloud, siendo referentes en la creación de industrias resilientes y preparadas para los desafíos del futuro."
+            highlightWords={["Ser la consultora líder"]}
+            highlightColor="var(--cta-color)"
+          />
+        </div>
+
+        <div style={{ fontSize: "1.2rem", color: "var(--text-muted)", lineHeight: "1.8", textAlign: "center", maxWidth: "800px", margin: "0 auto 4rem auto", borderBottom: "4px solid var(--cta-color)", borderRadius: "1rem" }}>
+          <h3 className="service-card" style={{ fontSize: "1.5rem", marginBottom: "0.5rem", color: "var(--text-main)", textTransform: "uppercase" }}>Valores</h3>
+          <TextReveal
+            text="Integridad: Actuamos bajo la ética profesional de auditoría."
+            highlightWords={["Integridad"]}
+            highlightColor="var(--cta-color)"
+          />
+          <TextReveal
+            text="Innovación: Aplicamos IA y Cloud para resolver problemas de seguridad tradicionales."
+            highlightWords={["Innovación"]}
+            highlightColor="var(--cta-color)"
+          />
+          <TextReveal
+            text="Compromiso: La seguridad de su equipo es nuestra prioridad absoluta."
+            highlightWords={["Compromiso"]}
+            highlightColor="var(--cta-color)"
+          />
         </div>
       </div>
     </section>

@@ -8,10 +8,10 @@ import { Search, PenTool, ClipboardCheck, Award } from "lucide-react";
 gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
-  { id: 1, title: "Diagnóstico", desc: "Evaluación inicial de procesos e infraestructura", icon: <Search size={40} /> },
-  { id: 2, title: "Implementación", desc: "Mejoras físicas en planta y despliegue digital seguro", icon: <PenTool size={40} /> },
-  { id: 3, title: "Auditoría", desc: "Revisión integral y Cumplimiento Normativo", icon: <ClipboardCheck size={40} /> },
-  { id: 4, title: "Certificación", desc: "Acompañamiento en certificación ISO", icon: <Award size={40} /> },
+  { id: 1, title: "Diagnóstico 360°", desc: "Evaluamos el estado actual de su seguridad física y su infraestructura digital.", icon: <Search size={40} /> },
+  { id: 2, title: "Diseño de Arquitectura", desc: "Trazamos la hoja de ruta para cumplir con las normativas (SRT e ISO).", icon: <PenTool size={40} /> },
+  { id: 3, title: "Implementación Activa", desc: "Ejecutamos las mejoras en planta y configuramos los entornos seguros en la nube.", icon: <ClipboardCheck size={40} /> },
+  { id: 4, title: "Auditoría y Mejora Continua", desc: "Verificamos el cumplimiento y preparamos a la organización para la certificación final.", icon: <Award size={40} /> },
 ];
 
 export const Process = () => {

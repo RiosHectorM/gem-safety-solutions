@@ -21,8 +21,8 @@ export const Hero = () => {
           lineHeight: "1.2",
           textShadow: "0 4px 20px rgba(0,0,0,0.8)"
         }}>
-          GEM Safety Solutions:<br />
-          <span style={{ color: "var(--accent-color)" }}>Seguridad Integral para la Industria del Futuro</span>
+          GEM Safety Solutions<br /><br />
+          <span style={{ color: "var(--accent-color)", fontSize: "3rem", fontWeight: "bold" }}>Seguridad Integral para la Industria del Futuro</span>
         </h1>
         <p style={{
           fontSize: "1.25rem",
@@ -31,7 +31,7 @@ export const Hero = () => {
           lineHeight: "1.6",
           textTransform: "uppercase"
         }}>
-          Consultoría Integral en Higiene y Seguridad <br /> (ISO 45001 - 14001 - 9001) 
+          Consultoría Integral en Higiene y Seguridad <br /> (ISO 45001 - 14001 - 9001)
         </p>
         <p style={{
           fontSize: "1.25rem",
@@ -40,8 +40,8 @@ export const Hero = () => {
           lineHeight: "1.6",
           textTransform: "uppercase"
         }}>
-          Infraestructura Cloud Segura <br /> (ISO 27001 & AWS). 
-          
+          Infraestructura Cloud Segura <br /> (ISO 27001 & AWS).
+
         </p>
         <p style={{
           fontSize: "1.25rem",
