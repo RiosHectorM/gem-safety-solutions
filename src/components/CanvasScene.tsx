@@ -25,7 +25,7 @@ function ComplexModel({ modelRef, lowPerf }: { modelRef: React.MutableRefObject<
   useFrame((state) => {
     // Mouse Parallax interactivo sutil
     const pointer = state.pointer; // Normalizado de -1 a 1
-    
+
     // Suavizamos el objetivo y nos movemos hacia él
     targetRotation.current.x = THREE.MathUtils.lerp(targetRotation.current.x, (pointer.y * Math.PI) / 8, 0.05);
     targetRotation.current.y = THREE.MathUtils.lerp(targetRotation.current.y, (pointer.x * Math.PI) / 8, 0.05);
@@ -34,7 +34,7 @@ function ComplexModel({ modelRef, lowPerf }: { modelRef: React.MutableRefObject<
       modelRef.current.rotation.x = targetRotation.current.x;
       modelRef.current.rotation.y = targetRotation.current.y;
     }
-    
+
     // Respiro constante en la mesh interna
     if (meshRef.current) {
       meshRef.current.rotation.y += 0.002;
@@ -44,17 +44,17 @@ function ComplexModel({ modelRef, lowPerf }: { modelRef: React.MutableRefObject<
   return (
     <group ref={modelRef}>
       {/* Trama Industrial / GridTécnico sutil en el fondo de la malla */}
-      <Grid 
-        position={[0, -2, -3]} 
-        args={[10.5, 10.5]} 
-        cellSize={0.5} 
-        cellThickness={1} 
-        cellColor="var(--cta-hover)" 
-        sectionSize={2.5} 
-        sectionThickness={1.5} 
-        sectionColor="var(--cta-color)" 
-        fadeDistance={25} 
-        fadeStrength={1} 
+      <Grid
+        position={[0, -2, -3]}
+        args={[10.5, 10.5]}
+        cellSize={0.5}
+        cellThickness={1}
+        cellColor="var(--cta-hover)"
+        sectionSize={2.5}
+        sectionThickness={1.5}
+        sectionColor="var(--cta-color)"
+        fadeDistance={25}
+        fadeStrength={1}
         rotation={[-Math.PI / 2, 0, 0]}
       />
 
@@ -71,7 +71,7 @@ function ComplexModel({ modelRef, lowPerf }: { modelRef: React.MutableRefObject<
             wireframe={true}
           />
         </mesh>
-        
+
         {/* Capa Exterior "Cloud" Sutil */}
         <mesh scale={[1.8, 1.8, 1.8]}>
           <octahedronGeometry args={[1, lowPerf ? 1 : 2]} />
@@ -79,7 +79,7 @@ function ComplexModel({ modelRef, lowPerf }: { modelRef: React.MutableRefObject<
             color="var(--cta-color)"
             metalness={0.5}
             roughness={0.5}
-            transmission={0.9} 
+            transmission={0.9}
             thickness={1}
             opacity={0.3}
             transparent={true}
@@ -114,11 +114,11 @@ export function CanvasScene() {
   return (
     <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100vh", zIndex: 0, background: "var(--bg-color)" }}>
       <Canvas dpr={dpr as [number, number]} gl={{ antialias: !lowPerf, alpha: false }}>
-        <PerformanceMonitor 
+        <PerformanceMonitor
           onDecline={() => {
             setDpr([1, 1]);
             setLowPerf(true);
-          }} 
+          }}
           onIncline={() => {
             setDpr([1, 2]);
             setLowPerf(false);
@@ -130,7 +130,7 @@ export function CanvasScene() {
         <directionalLight position={[10, 10, 5]} intensity={2} color="var(--accent-color)" castShadow={!lowPerf} />
         <directionalLight position={[-10, -10, -5]} intensity={1} color="var(--cta-color)" />
         <Environment preset="night" blur={0.8} />
-        
+
         <Suspense fallback={<Loader />}>
           <ComplexModel modelRef={modelRef} lowPerf={lowPerf} />
           <Preload all />

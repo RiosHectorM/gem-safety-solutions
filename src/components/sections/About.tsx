@@ -38,7 +38,7 @@ export const About = () => {
             borderLeft: "4px solid var(--accent-color)"
           }}>
             <UserCircle2 size={80} color="var(--accent-color)" style={{ margin: "0 auto 1rem auto" }} />
-            <h3 style={{ fontSize: "1.5rem", marginBottom: "0.5rem", color: "var(--text-main)" }}>Héctor Martin</h3>
+            <h3 style={{ fontSize: "1.5rem", marginBottom: "0.5rem", color: "var(--text-main)" }}>Héctor Martín</h3>
             <p style={{ color: "var(--accent-color)", fontWeight: "bold", marginBottom: "1rem" }}>Arquitecto Cloud y Ciberseguridad</p>
             <TextReveal text="Certificado en AWS e implementador de ISO 27001. Lidera el diseño de infraestructuras digitales resilientes, protegiendo los datos corporativos frente a las amenazas de ciberseguridad modernas." highlightWords={["ISO 27001", "AWS"]} highlightColor="var(--accent-color)" />
           </div>

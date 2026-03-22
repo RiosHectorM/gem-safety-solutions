@@ -21,37 +21,30 @@ export const Hero = () => {
           lineHeight: "1.2",
           textShadow: "0 4px 20px rgba(0,0,0,0.8)"
         }}>
-          GEM Safety Solutions<br /><br />
+          GEM Safety Solutions<br />
           <span style={{ color: "var(--accent-color)", fontSize: "3rem", fontWeight: "bold" }}>Seguridad Integral para la Industria del Futuro</span>
         </h1>
         <p style={{
-          fontSize: "1.25rem",
+          fontSize: "1rem",
           color: "var(--text-muted)",
-          marginBottom: "2.5rem",
+          marginBottom: "1rem",
           lineHeight: "1.6",
           textTransform: "uppercase"
         }}>
           Consultoría Integral en Higiene y Seguridad <br /> (ISO 45001 - 14001 - 9001)
         </p>
         <p style={{
-          fontSize: "1.25rem",
+          fontSize: "1rem",
           color: "var(--text-muted)",
-          marginBottom: "2.5rem",
+          marginBottom: "1rem",
           lineHeight: "1.6",
           textTransform: "uppercase"
         }}>
           Infraestructura Cloud Segura <br /> (ISO 27001 & AWS).
 
         </p>
-        <p style={{
-          fontSize: "1.25rem",
-          color: "var(--text-muted)",
-          marginBottom: "2.5rem",
-          lineHeight: "1.6",
-          textTransform: "uppercase"
-        }}>
-          <span style={{ color: "var(--accent-color)" }}>Donde la seguridad física se encuentra con el futuro digital.</span>
-        </p>
+        <img className="" src="/assets/GEM.png" alt="GEM" style={{ width: "100%", height: "auto", borderRadius: "3.5rem" }} />
+
         <button
           className="cta-button"
           style={{
@@ -64,7 +57,8 @@ export const Hero = () => {
             borderRadius: "0.5rem",
             cursor: "pointer",
             transition: "all 0.3s ease",
-            boxShadow: "0 4px 15px rgba(184, 115, 51, 0.4)"
+            boxShadow: "0 4px 15px rgba(184, 115, 51, 0.4)",
+            marginTop: "1rem"
           }}
           onClick={() => {
             document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });

@@ -47,3 +47,46 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--accent-color);
 }
 
+/* Logo Carousel Animation */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-150px * 6)); } /* 150px is the width of each logo item, 6 logos total */
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  padding: 1rem 0;
+  background: rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.carousel-track {
+  display: flex;
+  width: calc(150px * 20); /* 6 logos * 2 sets */
+  animation: scroll 20s linear infinite;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.carousel-item {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.carousel-item img {
+  max-width: 100px;
+  max-height: 50px;
+  filter: grayscale(100%) opacity(0.6);
+  transition: all 0.3s ease;
+}
+
+.carousel-item:hover img {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.1);
+}
+

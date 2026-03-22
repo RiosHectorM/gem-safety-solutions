@@ -29,6 +29,11 @@ export const TechStack = () => {
               <li style={{ display: "flex", alignItems: "start", gap: "0.5rem", justifyItems: "start" }}>
                 <span style={{ color: "var(--cta-color)" }}>✔</span> Gestión de Emergencias: Diseño de planes de evacuación, simulación de siniestros y formación de brigadas industriales.
               </li>
+              <li style={{ display: "flex", alignItems: "center", gap: "0.5rem", justifyContent: "space-around"}}>
+                <img className="service-card" src="/assets/45001.png" alt="45001" style={{ width: "100px", height: "100px" }} />
+                <img className="service-card" src="/assets/14001.png" alt="14001" style={{ width: "100px", height: "100px" }} />
+                <img className="service-card" src="/assets/9001.png" alt="9001" style={{ width: "100px", height: "100px" }} />
+              </li>
             </ul>
           </div>
 
@@ -49,6 +54,11 @@ export const TechStack = () => {
               </li>
               <li style={{ display: "flex", alignItems: "start", gap: "0.5rem", justifyItems: "start" }}>
                 <span style={{ color: "var(--accent-color)" }}>✔</span> Continuidad del Negocio (BCP): Estrategias de recuperación ante desastres y alta disponibilidad para sistemas críticos.
+              </li>
+              <li style={{ display: "flex", alignItems: "center", gap: "0.5rem", justifyContent: "space-around"}}>
+                <img className="service-card" src="/assets/27001.png" alt="27001" style={{ width: "100px", height: "100px" }} />
+                <img className="service-card" src="/assets/AWS.png" alt="AWS" style={{ width: "100px", height: "60px" }} />
+                <img className="service-card" src="/assets/saa.png" alt="saa" style={{ width: "100px", height: "100px" }} />
               </li>
             </ul>
           </div>

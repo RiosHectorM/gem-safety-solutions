@@ -9,13 +9,14 @@ import { Services } from "@/components/sections/Services";
 import { Differential } from "@/components/sections/Differential";
 import { TechStack } from "@/components/sections/TechStack";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
   return (
     <main style={{ minHeight: "100vh", position: "relative" }}>
       {/* El Canvas en el fondo */}
       <CanvasScene />
-      
+
       {/* Contenido HTML por encima del Canvas */}
       <div className="content-wrapper" style={{ position: "relative", zIndex: 1 }}>
         <Hero />
@@ -27,11 +28,7 @@ export default function Home() {
         <About />
         <ContactSection />
       </div>
-
-      {/* Footer sencillo */}
-      <footer style={{ padding: "2rem", textAlign: "center", background: "var(--bg-color)", color: "var(--text-muted)", fontSize: "0.9rem", position: "relative", zIndex: 10 }}>
-        © {new Date().getFullYear()} GEM Safety Solutions. Todos los derechos reservados.
-      </footer>
+      <Footer />
     </main>
   );
 }
