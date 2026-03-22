@@ -1,12 +1,12 @@
 :root {
   --bg-color: #121212; /* Fondo principal: Negro Mate o alternativamente #1A1A1A */
   --bg-lighter: #1A1A1A; /* Fondo para tarjetas/secciones */
-  --accent-color: #008080; /* Verde Teal */
+  --accent-color: #00ccff; /* Verde Teal */
   --accent-alt: #0047AB; /* Azul Cobalto */
-  --text-main: #F0F0F0; /* Blanco Roto */
+  --text-main: #ffffff; /* Blanco Roto */
   --text-muted: #CCCCCC; /* Gris Claro */
-  --cta-color: #B87333; /* Naranja Cobrizo */
-  --cta-hover: #C5A059; /* Dorado Metálico */
+  --cta-color: #ffc400ad; /* Naranja Cobrizo */
+  --cta-hover: #facc4a; /* Dorado Metálico */
   
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;

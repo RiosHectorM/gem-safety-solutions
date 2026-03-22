@@ -45,7 +45,7 @@ export const Hero = () => {
         </p>
         <img className="" src="/assets/GEM.png" alt="GEM" style={{ width: "100%", height: "auto", borderRadius: "3.5rem" }} />
 
-        <button
+        {/* <button
           className="cta-button"
           style={{
             padding: "1rem 2rem",
@@ -73,7 +73,7 @@ export const Hero = () => {
           }}
         >
           Solicitar Consulta Técnica
-        </button>
+        </button> */}
       </div>
     </section>
   );
