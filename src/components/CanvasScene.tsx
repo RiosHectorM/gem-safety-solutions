@@ -17,35 +17,90 @@ function Loader() {
   );
 }
 
+function DiamondShield({ lowPerf }: { lowPerf: boolean }) {
+  const meshRef = useRef<THREE.Group>(null);
+
+  // Define Shield Shape
+  const shieldShape = new THREE.Shape();
+  shieldShape.moveTo(0, 1.4);
+  shieldShape.lineTo(0.9, 1.1);
+  shieldShape.lineTo(1.1, 0.2);
+  shieldShape.quadraticCurveTo(1.1, -0.6, 0, -1.4);
+  shieldShape.quadraticCurveTo(-1.1, -0.6, -1.1, 0.2);
+  shieldShape.lineTo(-0.9, 1.1);
+  shieldShape.closePath();
+
+  const extrudeSettings = {
+    depth: 0.3,
+    bevelEnabled: true,
+    bevelThickness: 0.1,
+    bevelSize: 0.1,
+    bevelOffset: 0,
+    bevelSegments: 2
+  };
+
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y += 0.005;
+      meshRef.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
+    }
+  });
+
+  return (
+    <group ref={meshRef}>
+      {/* Inner "Diamond Core" */}
+      <mesh>
+        <extrudeGeometry args={[shieldShape, extrudeSettings]} />
+        <meshPhysicalMaterial
+          color="var(--accent-color)"
+          metalness={0.1}
+          roughness={0}
+          transmission={1}
+          thickness={1.5}
+          ior={2.4}
+          clearcoat={1}
+          attenuationDistance={1}
+          attenuationColor="var(--accent-color)"
+          transparent={true}
+        />
+      </mesh>
+
+      {/* Wireframe Shell "Industrial Tech" */}
+      <mesh scale={[1.1, 1.1, 1.1]} position={[0, 0, 0.05]}>
+        <extrudeGeometry args={[shieldShape, extrudeSettings]} />
+        <meshPhysicalMaterial
+          color="var(--cta-color)"
+          wireframe={true}
+          transparent={true}
+          opacity={0.4}
+        />
+      </mesh>
+
+      {/* Glow / Core Light effect */}
+      <pointLight color="var(--accent-color)" intensity={5} distance={3} />
+    </group>
+  );
+}
+
 // Representa Fusión Industrial-Cloud
 function ComplexModel({ modelRef, lowPerf }: { modelRef: React.MutableRefObject<THREE.Group | null>, lowPerf: boolean }) {
-  const meshRef = useRef<THREE.Group>(null);
   const targetRotation = useRef({ x: 0, y: 0 });
 
   useFrame((state) => {
-    // Mouse Parallax interactivo sutil
-    const pointer = state.pointer; // Normalizado de -1 a 1
-
-    // Suavizamos el objetivo y nos movemos hacia él
-    targetRotation.current.x = THREE.MathUtils.lerp(targetRotation.current.x, (pointer.y * Math.PI) / 8, 0.05);
-    targetRotation.current.y = THREE.MathUtils.lerp(targetRotation.current.y, (pointer.x * Math.PI) / 8, 0.05);
+    const pointer = state.pointer;
+    targetRotation.current.x = THREE.MathUtils.lerp(targetRotation.current.x, (pointer.y * Math.PI) / 6, 0.05);
+    targetRotation.current.y = THREE.MathUtils.lerp(targetRotation.current.y, (pointer.x * Math.PI) / 6, 0.05);
 
     if (modelRef.current) {
       modelRef.current.rotation.x = targetRotation.current.x;
       modelRef.current.rotation.y = targetRotation.current.y;
     }
-
-    // Respiro constante en la mesh interna
-    if (meshRef.current) {
-      meshRef.current.rotation.y += 0.002;
-    }
   });
 
   return (
     <group ref={modelRef}>
-      {/* Trama Industrial / GridTécnico sutil en el fondo de la malla */}
       <Grid
-        position={[0, -2, -3]}
+        position={[0, -2.5, -3]}
         args={[10.5, 10.5]}
         cellSize={0.5}
         cellThickness={1}
@@ -57,35 +112,9 @@ function ComplexModel({ modelRef, lowPerf }: { modelRef: React.MutableRefObject<
         fadeStrength={1}
         rotation={[-Math.PI / 2, 0, 0]}
       />
-
-      <group ref={meshRef}>
-        {/* Núcleo Industrial "Solid" */}
-        <mesh>
-          <icosahedronGeometry args={[1.5, lowPerf ? 0 : 1]} />
-          <meshPhysicalMaterial
-            color="var(--accent-color)"
-            metalness={0.8}
-            roughness={0.2}
-            clearcoat={1.0}
-            clearcoatRoughness={0.1}
-            wireframe={true}
-          />
-        </mesh>
-
-        {/* Capa Exterior "Cloud" Sutil */}
-        <mesh scale={[1.8, 1.8, 1.8]}>
-          <octahedronGeometry args={[1, lowPerf ? 1 : 2]} />
-          <meshPhysicalMaterial
-            color="var(--cta-color)"
-            metalness={0.5}
-            roughness={0.5}
-            transmission={0.9}
-            thickness={1}
-            opacity={0.3}
-            transparent={true}
-          />
-        </mesh>
-      </group>
+      <Suspense fallback={null}>
+        <DiamondShield lowPerf={lowPerf} />
+      </Suspense>
     </group>
   );
 }
