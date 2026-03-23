@@ -20,6 +20,7 @@ export default function Home() {
       {/* Contenido HTML por encima del Canvas */}
       <div className="content-wrapper" style={{ position: "relative", zIndex: 1 }}>
         <Hero />
+        
         <Problem />
         <Process />
         <Services />

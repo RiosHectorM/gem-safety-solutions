@@ -1,0 +1,147 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.heroContent {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(18, 18, 18, 0.65);
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.backgroundWrapper {
+  position: relative;
+  background-image: url('/assets/GEM.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+}
+
+/* Overlay for better contrast */
+.backgroundWrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  z-index: 1;
+}
+
+.innerContent {
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  color: #ffffff;
+  /* Complex text shadow for "stroke/border" effect and depth */
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000,
+     2px  2px 4px rgba(0,0,0,0.8),
+     4px  4px 10px rgba(0,0,0,1);
+}
+
+.subtitle {
+  display: block;
+  color: var(--cta-color);
+  font-size: clamp(1.5rem, 6vw, 2.8rem);
+  font-weight: 700;
+  margin-top: 0.5rem;
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000,
+     2px  2px 4px rgba(0,0,0,0.8);
+}
+
+.descriptionBox {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: clamp(1rem, 3vw, 2rem);
+  border-radius: 1rem;
+  backdrop-filter: blur(2px);
+  max-width: 85%;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.descriptionText {
+  color: #ffffff;
+  font-size: clamp(0.875rem, 2.5vw, 1.1rem);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+}
+
+.descriptionText:last-child {
+  margin-bottom: 0;
+}
+
+.cta {
+  padding: 1rem 2.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 800;
+  color: #000000;
+  background-color: var(--cta-color);
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 20px rgba(255, 196, 0, 0.3);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cta:hover {
+  background-color: var(--cta-hover);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(255, 196, 0, 0.5);
+}
+
+.cta:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    border-radius: 1rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .descriptionBox {
+    max-width: 100%;
+  }
+}
