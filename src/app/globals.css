@@ -90,3 +90,9 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.1);
 }
 
+/* Global Service Card Utility (requested by user) */
+.service-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
