@@ -22,7 +22,7 @@ export const ContactSection = () => {
         body: JSON.stringify(formData),
       });
       const data: ContactResponse = await res.json();
-      
+
       if (data.success) {
         setStatus("¡Mensaje enviado correctamente! Nos pondremos en contacto a la brevedad.");
         setFormData({ name: "", empresa: "", email: "", message: "" });
@@ -40,16 +40,16 @@ export const ContactSection = () => {
   return (
     <section id="contacto" className="contact-section" style={{ padding: "8rem 2rem", position: "relative", zIndex: 10, background: "var(--bg-lighter)" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem" }} className="contact-grid">
-        
+
         {/* Contact Info */}
         <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
           <h2 style={{ fontSize: "2.5rem", color: "var(--accent-color)", marginBottom: "1rem", textTransform: "uppercase" }}>Iniciemos la Conversación</h2>
           <TextReveal text="Contanos sobre tu desafío. Ya sea una auditoría industrial o un despliegue seguro en la nube, tenemos el expertise para blindar tu negocio." highlightWords={["auditoría industrial", "despliegue seguro en la nube"]} highlightColor="var(--accent-color)" />
-          
+
           <div className="service-card" style={{ marginTop: "2rem", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "1rem", color: "var(--text-main)" }}>
               <Mail color="var(--cta-color)" />
-              <span>eugenia.gutierrez.iso@gmail.com</span>
+              <span>rios.hector.martin@gmail.com</span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "1rem", color: "var(--text-main)" }}>
               <MapPin color="var(--cta-color)" />
@@ -66,35 +66,35 @@ export const ContactSection = () => {
         <div className="service-card" style={{ background: "var(--bg-color)", padding: "3rem", borderRadius: "1rem", border: "1px solid rgba(255,255,255,0.05)" }}>
           <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
             <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
-              <input 
-                type="text" 
-                placeholder="Nombre Completo" 
+              <input
+                type="text"
+                placeholder="Nombre Completo"
                 required
                 value={formData.name}
                 onChange={e => setFormData({ ...formData, name: e.target.value })}
                 className="contact-input"
               />
-              <input 
-                type="text" 
-                placeholder="Empresa" 
+              <input
+                type="text"
+                placeholder="Empresa"
                 required
                 value={formData.empresa}
                 onChange={e => setFormData({ ...formData, empresa: e.target.value })}
                 className="contact-input"
               />
             </div>
-            
-            <input 
-              type="email" 
-              placeholder="Email Corporativo" 
+
+            <input
+              type="email"
+              placeholder="Email Corporativo"
               required
               value={formData.email}
               onChange={e => setFormData({ ...formData, email: e.target.value })}
               className="contact-input"
             />
-            
-            <textarea 
-              placeholder="¿Cómo podemos ayudarte?" 
+
+            <textarea
+              placeholder="¿Cómo podemos ayudarte?"
               required
               rows={5}
               value={formData.message}
@@ -102,17 +102,17 @@ export const ContactSection = () => {
               className="contact-input"
               style={{ resize: "vertical" }}
             />
-            
-            <button 
-              type="submit" 
+
+            <button
+              type="submit"
               disabled={loading}
-              style={{ 
-                padding: "1rem", 
-                borderRadius: "0.5rem", 
-                border: "none", 
-                background: loading ? "var(--text-muted)" : "var(--cta-color)", 
-                color: "var(--bg-color)", 
-                fontWeight: "bold", 
+              style={{
+                padding: "1rem",
+                borderRadius: "0.5rem",
+                border: "none",
+                background: loading ? "var(--text-muted)" : "var(--cta-color)",
+                color: "var(--bg-color)",
+                fontWeight: "bold",
                 cursor: loading ? "not-allowed" : "pointer",
                 fontSize: "1.1rem",
                 transition: "background 0.3s ease"
@@ -126,7 +126,8 @@ export const ContactSection = () => {
 
       </div>
 
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .contact-input {
           flex: 1;
           min-width: 200px;

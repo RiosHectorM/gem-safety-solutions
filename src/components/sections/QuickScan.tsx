@@ -53,8 +53,18 @@ export const QuickScan = () => {
   const [lead, setLead] = useState({ name: "", company: "", email: "" });
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleStart = () => {
     animateTransition(() => setStep(0));
+  };
+
+  const handleReset = () => {
+    animateTransition(() => {
+      setStep(-1);
+      setResponses([]);
+      setLead({ name: "", company: "", email: "" });
+    });
   };
 
   const handleAnswer = (score: number) => {
@@ -68,9 +78,40 @@ export const QuickScan = () => {
     }
   };
 
-  const handleLeadSubmit = (e: React.FormEvent) => {
+  const handleLeadSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    animateTransition(() => setStep(9));
+    setIsSubmitting(true);
+
+    const score = calculateScore();
+    const level = getResultLevel(score).label;
+
+    try {
+      const response = await fetch("http://localhost:8080/api/quickscan", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: lead.name,
+          company: lead.company,
+          email: lead.email,
+          score: score,
+          level: level,
+          answers: responses,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Error al enviar los resultados");
+      }
+
+      animateTransition(() => setStep(9));
+    } catch (error) {
+      console.error("Error submitting quick scan:", error);
+      alert("Hubo un error al enviar tus resultados. Por favor, intenta de nuevo.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const animateTransition = (callback: () => void) => {
@@ -154,7 +195,7 @@ export const QuickScan = () => {
                   className={styles.input} 
                   value={lead.name}
                   onChange={(e) => setLead({...lead, name: e.target.value})}
-                  placeholder="Juan Pérez"
+                  placeholder="Jhon Doe"
                 />
               </div>
               <div>
@@ -176,11 +217,11 @@ export const QuickScan = () => {
                   className={styles.input} 
                    value={lead.email}
                   onChange={(e) => setLead({...lead, email: e.target.value})}
-                  placeholder="juan@empresa.com"
+                  placeholder="mail@empresa.com"
                 />
               </div>
-              <button type="submit" className={styles.submitButton}>
-                Ver Resultados Finales
+              <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
+                {isSubmitting ? "Enviando..." : "Ver Resultados Finales"}
               </button>
             </form>
           </div>
@@ -197,7 +238,7 @@ export const QuickScan = () => {
             <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
               <button 
                 className={styles.actionButton}
-                onClick={() => setStep(-1)}
+                onClick={handleReset}
                 style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "white" }}
               >
                 Reiniciar
