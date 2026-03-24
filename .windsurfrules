@@ -1,0 +1,1 @@
+Analiza la estructura del proyecto. El objetivo es mantener una separación estricta entre el cliente (Next.js) y el servidor (Go). Configura el entorno de desarrollo para que ambos corran en paralelo y asegúrate de que el tipado de TypeScript en el front coincida con los structs de Go en el back.
